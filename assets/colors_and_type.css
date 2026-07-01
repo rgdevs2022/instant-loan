@@ -1,0 +1,178 @@
+/* ============================================================
+   MERA LOAN — Design Tokens (colors + type)
+   Visual language inspired by a warm retail-flagship system:
+   four-tier green, gold for premium moments, warm cream canvas.
+   Fonts: Manrope (primary), Lora (premium/editorial serif),
+          Kalam (handwritten e-sign moments only).
+   NOTE ON SUBSTITUTION: the reference voice typeface is proprietary;
+   Manrope is the open-source stand-in. Verify tight tracking reads
+   well; adjust to -0.005em if a future font swap needs it.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Kalam:wght@400;700&display=swap');
+
+:root {
+  /* ---------- BRAND GREENS — BRIGHT palette (no dark surfaces) ---------- */
+  --brand-lime:    #9AEF5E;   /* BRAND green — bright lime. FILLS: CTA, float, badges */
+  --lime-soft:     #c8f7a8;   /* soft lime wash — hovers, light highlight fills       */
+  --green-primary: #0a5e3a;   /* deep readable green — headings, brand text, icons    */
+  --green-accent:  #0c7a4e;   /* mid green — links, outlined buttons, focus borders   */
+  --green-deep:    #073d28;   /* deepest green — high-contrast text on lime fills     */
+  --green-house:   #e0fced;   /* AQUA SPRING — light "house" surface: bands, footer   */
+  --aqua:          #e0fced;   /* alias — primary light band/footer surface           */
+  --aqua-deep:     #bff0db;   /* slightly deeper aqua — borders/sub-surfaces on bands */
+  --green-uplift:  #7fe06a;   /* decorative bright lime-green accent                  */
+  --green-light:   #d4e9e2;   /* pale mint wash — valid tint, light utility surface   */
+
+  /* ---------- GOLD (premium / rewards-tier ceremony ONLY) ---------- */
+  --gold:          #cba258;   /* premium-tier callouts, status badges                */
+  --gold-light:    #dfc49d;   /* softer gold wash                                    */
+  --gold-lightest: #faf6ee;   /* cream-gold surface wash under premium sections      */
+
+  /* ---------- SURFACES ---------- */
+  --white:        #ffffff;    /* primary card + modal surface                        */
+  --neutral-cool: #f9f9f9;    /* dropdowns, quiet utility containers                 */
+  --canvas:       #f2f0eb;    /* WARM CREAM — primary page canvas (load-bearing)      */
+  --ceramic:      #edebe9;    /* slightly darker cream — zone separators             */
+  --ink:          #000000;    /* deep ink — top conversion strip, high-contrast nav  */
+
+  /* ---------- TEXT ---------- */
+  --text-strong:      rgba(0,0,0,0.87);   /* headings + body on light (warm, not pure black) */
+  --text-soft:        rgba(0,0,0,0.58);   /* secondary / metadata on light                   */
+  --text-on-aqua:     #0a5e3a;            /* heading + body on light aqua bands              */
+  --text-on-aqua-soft:#3a6b56;            /* secondary text on light aqua bands              */
+  --text-on-dark:     rgba(255,255,255,1);/* legacy — only if a dark surface is ever used   */
+  --text-on-dark-soft:rgba(255,255,255,0.70);/* legacy                                       */
+  --text-rewards:     #33433d;            /* dusty slate-green — rewards/tier surfaces only   */
+
+  /* ---------- SEMANTIC ---------- */
+  --red:        #c82014;                  /* error / destructive                         */
+  --yellow:     #fbbc05;                  /* warning / legacy accent                     */
+  --tint-valid:   hsl(160 32% 87% / 33%); /* valid-field background tint                 */
+  --tint-invalid: hsl(4 82% 43% / 5%);    /* invalid-field background tint               */
+  --input-border: #d6dbde;                /* default field border                        */
+  --hairline:     #e7e7e7;                /* table row separators                        */
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-sans:   'Manrope', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif:  'Lora', 'Iowan Old Style', Georgia, serif;   /* premium / editorial moments */
+  --font-script: 'Kalam', 'Comic Sans MS', cursive;           /* handwritten e-sign only     */
+
+  /* ---------- TYPE SCALE (px; ref scale is rem @1rem=10px) ---------- */
+  --text-display: 80px;  /* text-10 — hero display          */
+  --text-jumbo:   58px;  /* text-9  — secondary hero         */
+  --text-hero:    45px;  /* text-8  — section headlines      */
+  --text-h1:      24px;  /* h1 — green, weight 600           */
+  --text-h2:      24px;  /* h2 — text-strong, weight 400     */
+  --text-lg:      19px;  /* body large — hero intro          */
+  --text-body:    16px;  /* default body                     */
+  --text-sm:      14px;  /* labels, button text, metadata    */
+  --text-xs:      13px;  /* captions, active float labels    */
+
+  /* ---------- TRACKING + LINE HEIGHT ---------- */
+  --tracking-tight:  -0.01em;  /* default, characteristic compression */
+  --tracking-loose:   0.1em;   /* emphasized caps                     */
+  --tracking-looser:  0.15em;  /* uppercase labels                    */
+  --leading-normal:  1.5;      /* body                                */
+  --leading-compact: 1.2;      /* display / buttons                   */
+
+  /* ---------- WEIGHTS ---------- */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+
+  /* ---------- SPACING (rem-based semantic scale; px shown) ---------- */
+  --space-1: 0.25rem; /* 4px  tightest inline                    */
+  --space-2: 0.5rem;  /* 8px  small gap, button vertical padding */
+  --space-3: 1rem;    /* 16px DEFAULT — card pad, gutter xs       */
+  --space-4: 1.5rem;  /* 24px section inner, gutter md            */
+  --space-5: 2rem;    /* 32px between-section                     */
+  --space-6: 2.5rem;  /* 40px large gaps, gutter lg               */
+  --space-7: 3rem;    /* 48px section-to-section                  */
+  --space-8: 3.5rem;  /* 56px very large — float button height    */
+  --space-9: 4rem;    /* 64px widest section padding              */
+
+  --gutter:    1rem;   /* 16px default/mobile  */
+  --gutter-md: 1.5rem; /* 24px tablet          */
+  --gutter-lg: 2.5rem; /* 40px desktop         */
+
+  /* ---------- RADII ---------- */
+  --radius-card:  12px;  /* cards, modals, tiles        */
+  --radius-input: 4px;   /* outlined input rectangles   */
+  --radius-pill:  50px;  /* ALL buttons — universal     */
+  --radius-round: 50%;   /* circular icons, float CTA   */
+
+  /* ---------- ELEVATION (layer 2-3 low-alpha, never one heavy) ---------- */
+  --shadow-card: 0 0 0.5px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.24);
+  --shadow-nav:  0 1px 3px rgba(0,0,0,0.10), 0 2px 2px rgba(0,0,0,0.06), 0 0 2px rgba(0,0,0,0.07);
+  --shadow-float-base:    0 0 6px rgba(0,0,0,0.24);
+  --shadow-float-ambient: 0 8px 12px rgba(0,0,0,0.14);
+  --shadow-float: var(--shadow-float-base), var(--shadow-float-ambient);
+
+  /* ---------- MOTION ---------- */
+  --press-scale: 0.95;                 /* universal button active state            */
+  --ease-standard: ease;               /* default 0.2s ease                        */
+  --ease-spring: cubic-bezier(0.32, 2.32, 0.61, 0.27); /* springy option markers   */
+  --ease-expander: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* accordion 300ms        */
+  --dur-fast: 0.2s;
+  --dur-base: 0.3s;
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES — apply on top of the tokens above.
+   ============================================================ */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-size: var(--text-h1);
+  font-weight: var(--weight-semibold);
+  line-height: 1.5;
+  letter-spacing: var(--tracking-tight);
+  color: var(--green-primary);
+  margin: 0;
+}
+
+h2, .h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+  margin: 0;
+}
+
+.display { font-size: var(--text-display); font-weight: var(--weight-semibold); line-height: var(--leading-compact); letter-spacing: var(--tracking-tight); }
+.jumbo   { font-size: var(--text-jumbo);   font-weight: var(--weight-semibold); line-height: var(--leading-compact); letter-spacing: var(--tracking-tight); }
+.hero    { font-size: var(--text-hero);    font-weight: var(--weight-semibold); line-height: var(--leading-compact); letter-spacing: var(--tracking-tight); }
+
+/* Premium / editorial serif moment (rewards-tier headlines) */
+.editorial { font-family: var(--font-serif); font-weight: var(--weight-medium); letter-spacing: 0; }
+
+/* Handwritten e-sign moment only */
+.handwritten { font-family: var(--font-script); }
+
+p, .body {
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+}
+
+.body-lg  { font-size: var(--text-lg); line-height: 1.75; letter-spacing: var(--tracking-tight); }
+.body-sm  { font-size: var(--text-sm); line-height: var(--leading-normal); }
+.caption  { font-size: var(--text-xs); line-height: var(--leading-normal); color: var(--text-soft); }
+.eyebrow  { font-size: var(--text-xs); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: var(--tracking-looser); }
+
+a { color: var(--green-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }

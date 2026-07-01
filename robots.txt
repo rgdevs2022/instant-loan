@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://instantloan.mycashbridge.com/sitemap.xml

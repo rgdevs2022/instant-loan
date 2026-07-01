@@ -1,0 +1,25 @@
+<svg width="48" height="48" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyCashBridge">
+  <defs>
+    <linearGradient id="mcb-m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d3bd1"/>
+      <stop offset="1" stop-color="#0a1f96"/>
+    </linearGradient>
+    <linearGradient id="mcb-c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17d6c4"/>
+      <stop offset="1" stop-color="#0795b4"/>
+    </linearGradient>
+    <linearGradient id="mcb-b" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d8a43"/>
+      <stop offset="1" stop-color="#7ed321"/>
+    </linearGradient>
+  </defs>
+  <!-- B (behind) -->
+  <g stroke="url(#mcb-b)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M 330 172 h 40 a 42 42 0 0 1 0 84 h -40"/>
+    <path d="M 330 256 h 40 a 42 42 0 0 1 0 84 h -40"/>
+  </g>
+  <!-- C (over B) -->
+  <path d="M 352 190 A 88 88 0 1 0 352 322" stroke="url(#mcb-c)" stroke-width="44" stroke-linecap="round" fill="none"/>
+  <!-- M (over C) -->
+  <path d="M 102 330 L 102 188 L 180 274 L 256 190" stroke="url(#mcb-m)" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

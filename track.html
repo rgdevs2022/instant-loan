@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Track Application &ndash; MyCashBridge Instant Loan</title>
+<meta name="description" content="Track the status of your MyCashBridge instant loan application using your Application ID and registered mobile number." />
+<link rel="canonical" href="https://instantloan.mycashbridge.com/track.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
+<link rel="icon" href="assets/logo-cashbridge-mark.svg" />
+<link rel="stylesheet" href="assets/instant-loan.css" />
+<script src="assets/lucide.min.js"></script>
+</head>
+<body>
+
+<header class="il-sn-nav" role="banner">
+  <div class="il-sn-nav-inner">
+    <a href="https://mycashbridge.com" class="il-sn-logo" aria-label="MyCashBridge Home">
+      <img src="assets/logo-cashbridge-mark.svg" alt="MyCashBridge" width="36" height="36">
+      <div class="il-sn-brand">
+        <span class="il-sn-brand-name">MyCashBridge<span style="color:var(--text-soft);font-weight:600">.com</span></span>
+        <span class="il-sn-brand-sub">Instant Loan</span>
+      </div>
+    </a>
+    <div class="il-sn-nav-actions">
+      <a href="index.html" class="il-sn-back"><i data-lucide="arrow-left"></i> Apply for Loan</a>
+      <a href="https://mycashbridge.com" class="btn btn-outline btn-sm" style="font-size:12px"><i data-lucide="external-link"></i> MyCashBridge.com</a>
+    </div>
+  </div>
+</header>
+
+<section class="section il-track-page" style="background:var(--canvas)">
+  <div class="wrap" style="max-width:560px">
+    <div style="margin-bottom:24px">
+      <div class="eyebrow" style="margin-bottom:6px">Application tracker</div>
+      <h1 class="h-sec" style="font-size:28px;margin:0 0 6px">Track your loan status</h1>
+      <p style="font-size:14px;color:var(--text-soft);margin:0;line-height:1.5">Enter your Application ID and registered mobile number.</p>
+    </div>
+    <div class="card il-track-form-card" style="margin-bottom:24px">
+      <div class="il-field" style="margin-bottom:14px">
+        <label class="il-label" for="track-app-id">Application ID</label>
+        <input id="track-app-id" class="il-input" type="text" placeholder="e.g. MCB2026XXXXX" autocomplete="off" style="font-family:'Courier New',monospace;letter-spacing:.06em" />
+      </div>
+      <div class="il-field" style="margin-bottom:20px">
+        <label class="il-label" for="track-mobile">Registered mobile</label>
+        <div class="il-input-prefix">
+          <span class="il-prefix">+91</span>
+          <input id="track-mobile" class="il-input" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile" autocomplete="tel-national" />
+        </div>
+      </div>
+      <div id="track-error" style="display:none;font-size:13px;font-weight:600;color:var(--red);background:var(--tint-invalid);border-radius:8px;padding:10px 14px;margin-bottom:14px" role="alert"></div>
+      <button class="btn btn-filled btn-lg btn-block" id="track-btn">
+        <span class="il-btn-label"><i data-lucide="search"></i> Track Status</span>
+      </button>
+    </div>
+    <div id="track-result" style="display:none" aria-live="polite"></div>
+    <div class="card" style="text-align:center;background:var(--aqua);border:none">
+      <span class="eyebrow" style="display:block;margin-bottom:8px">New Application?</span>
+      <p style="font-size:14px;color:var(--text-on-aqua-soft);margin:0 0 16px;line-height:1.5">Check eligibility across 128+ lenders in 60 seconds.</p>
+      <a class="btn btn-filled btn-lg" href="index.html"><i data-lucide="zap"></i> Apply for Instant Loan</a>
+    </div>
+  </div>
+</section>
+
+<footer class="il-sn-footer" role="contentinfo">
+  <div class="il-sn-footer-grid">
+    <div>
+      <div class="il-sn-footer-logo">
+        <img src="assets/logo-cashbridge-mark.svg" alt="MyCashBridge" width="28" height="28">
+        <span class="il-sn-footer-brand-name">MyCashBridge<span style="color:rgba(255,255,255,0.5)">.com</span></span>
+      </div>
+      <p>MyCashBridge is a Lending Service Provider (LSP) &mdash; not a bank or lender. Loans are disbursed by RBI-regulated partner lenders.</p>
+    </div>
+    <div class="il-sn-footer-col">
+      <h5>Legal</h5>
+      <a href="https://mycashbridge.com/pages/terms.html">Terms &amp; Conditions</a>
+      <a href="https://mycashbridge.com/pages/privacy-policy.html">Privacy Policy</a>
+      <a href="https://mycashbridge.com/pages/grievance.html">Grievance Redressal</a>
+    </div>
+    <div class="il-sn-footer-col">
+      <h5>Links</h5>
+      <a href="index.html">Apply for Loan</a>
+      <a href="https://mycashbridge.com">MyCashBridge.com</a>
+      <a href="https://mycashbridge.com/pages/contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="il-sn-footer-bottom">
+    <span>&copy; 2026 MyCashBridge (Reddington Global Consultancy Pvt Ltd). All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="assets/instant-loan.js"></script>
+<script> if(window.lucide) window.lucide.createIcons(); </script>
+</body>
+</html>
