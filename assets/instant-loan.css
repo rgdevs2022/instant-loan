@@ -52,7 +52,7 @@ img { max-width: 100%; display: block; }
 a { color: var(--green-accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 button { font-family: var(--font-sans); }
-h1, h2, h3, h4, h5 { margin: 0; letter-spacing: -0.01em; }
+h1, h2, h3, h4, h5 { margin: 0; letter-spacing: -0.01em; overflow-wrap: break-word; word-break: break-word; }
 p { margin: 0; }
 
 /* ── Layout ────────────────────────────────────────────────── */
@@ -60,6 +60,7 @@ p { margin: 0; }
 .section { padding-block: 52px; }
 .center  { text-align: center; }
 .muted   { color: var(--text-soft); }
+@media (max-width: 600px) { br.br-desktop { display: none; } }
 
 /* ── Typography ────────────────────────────────────────────── */
 .eyebrow {
@@ -373,6 +374,8 @@ p { margin: 0; }
 .il-hero-badge {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 7px;
   background: rgba(154,239,94,0.13);
   border: 1px solid rgba(154,239,94,0.30);
@@ -384,6 +387,7 @@ p { margin: 0; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 16px;
+  max-width: 100%;
 }
 .il-hero-badge i, .il-hero-badge svg { width: 13px; height: 13px; }
 .il-hero h1 {
@@ -863,19 +867,45 @@ button.loading .il-btn-spin {
   .two { grid-template-columns: 1fr; gap: 28px; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
 }
+/* Footer collapses early — 3 columns are unreadable on phones */
+@media (max-width: 640px) {
+  .il-sn-footer-grid { grid-template-columns: 1fr; gap: 20px; padding: 0 16px 24px; }
+  .il-sn-footer-bottom { padding: 14px 16px; }
+}
 @media (max-width: 600px) {
   .wrap { padding-inline: 16px; }
   .section { padding-block: 36px; }
   .band { padding-block: 36px; }
-  .h-sec { font-size: 26px; }
-  .il-hero { padding: 32px 0 56px; }
-  .il-hero h1 { font-size: 26px; }
+  .h-sec { font-size: 24px; }
+  .lead { font-size: 15px; }
+  .il-hero { padding: 28px 0 52px; }
+  .il-hero h1 { font-size: 24px; }
   .il-hero p  { font-size: 14px; }
-  .il-hero-stat { min-width: 80px; padding: 11px 8px; }
+  .il-hero-stat { min-width: 80px; padding: 10px 8px; }
   .il-hero-stat b { font-size: 15px; }
-  .il-card-wrap { padding: 0 12px 44px; }
+  .il-card-wrap { padding: 0 12px 40px; }
 }
 @media (max-width: 500px) {
   .why-grid { grid-template-columns: 1fr; }
-  .il-sn-footer-grid { grid-template-columns: 1fr; gap: 22px; }
+}
+/* Small phones — tighten badge, step labels and trust row */
+@media (max-width: 420px) {
+  .il-hero h1 { font-size: 21px; }
+  .il-hero-badge { font-size: 9.5px; letter-spacing: 0.08em; padding: 4px 10px; }
+  .il-step-label { font-size: 9px; letter-spacing: 0.05em; }
+  .il-trust-row { gap: 10px 14px; }
+  .il-trust-item { font-size: 10.5px; }
+}
+@media (max-width: 380px) {
+  .il-otp-box { width: 42px; height: 50px; font-size: 20px; }
+  .il-otp-boxes { gap: 6px; }
+}
+/* Very small phones (≤340px) — prevent OTP overflow, stack action buttons */
+@media (max-width: 340px) {
+  .il-hero h1 { font-size: 18px; }
+  .il-sn-nav-actions .btn-outline { display: none; }
+  .il-otp-box { width: 36px; height: 44px; font-size: 16px; border-radius: 7px; }
+  .il-otp-boxes { gap: 4px; }
+  .il-actions-row { flex-direction: column; }
+  .il-actions-row .btn { width: 100%; }
 }
